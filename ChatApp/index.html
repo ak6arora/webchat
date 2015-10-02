@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat App</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="online">
+	<ul id="users-list"></ul>
+</div>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/js/handlebars-v2.0.0.js"></script>
+<script id="chat-tab" type="text/x-handlebars-template">
+	<div class="chat-box">
+		<div class="chat-head">
+			<h1 class="title">{{name}}</h1><span id="offline">(Offline)</span>
+			<span id="close-chat">X</span>
+		</div>
+		<ul>
+			{{#each chatHistory}}
+			<li class={{type}}>
+				<div class="bubble">
+					{{#if msg}}
+						{{msg}}
+					{{else}}
+						<img src={{img}} class="img-msg"/>
+					{{/if}}
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+		<form class="send-message">
+			<input type='text' id='msg-box' />
+			<div class="send-image">
+				<input type="file" id="image"/>
+			</div>
+		</form>
+		
+	</div>
+</script><script type="text/javascript" src="/js/client.js"></script>
+</body>
+</html>
