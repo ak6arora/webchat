@@ -6,7 +6,7 @@ app.use(express.static('public'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-http.listen(3000, function() {
+http.listen(80, function() {
     console.log("Dev Server is running on localhost");
 });
 
