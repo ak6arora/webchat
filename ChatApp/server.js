@@ -2,12 +2,13 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var port = process.env.PORT || 5000
 app.use(express.static('public'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-http.listen(80, function() {
-    console.log("Dev Server is running on localhost");
+http.listen(port, function() {
+    console.log("Dev Server is running on port "+port);
 });
 
 var userList = [];
