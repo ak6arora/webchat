@@ -1,3 +1,7 @@
+$(window).on('load resize',function(){
+    $('.online').height($(window).innerHeight()-$('.login-info').outerHeight());
+})
+
 $(document).ready(function() {
     var name = window.prompt('Enter a Unique UserID');
     var userList;
@@ -12,6 +16,7 @@ $(document).ready(function() {
     }
     if (name != null && $.trim(name) != '') {
         var socket = io();
+        $('.login-info').text("Logged in as "+name);
         socket.on('userList', function(data) {
             userList = data.list;
             var list = "";
