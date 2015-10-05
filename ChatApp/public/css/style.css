@@ -14,12 +14,35 @@ body {
     width: 100%;
     background-color: #2F54FF;
     padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+}
+span#userid{
+    float: left;
+}
+span#nav-btn{
+    float: right;
+}
+.bar {
+    position: absolute;
+    right: 5px;
+}
+.bar:nth-child(1) {
+    top: 0;
+}
+.bar:nth-child(2) {
+    top: 5px;
+}
+.bar:nth-child(3) {
+    top: 10px;
 }
 .online {
     width: 250px;
     position: fixed;
     right: 0;
-    border-left: 5px groove #CCC;
+    box-shadow: -3px 0px 14px 1px #ccc;
+
 }
 .online ul {
     list-style: none;
@@ -28,7 +51,7 @@ body {
     height: 100%;
 }
 .online ul li {
-    padding: 10px;
+    padding: 17px 10px;
     border-bottom: 1px solid #EEEEEE;
     color: #12BFFF;
     cursor: pointer;

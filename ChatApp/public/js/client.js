@@ -1,4 +1,4 @@
-$(window).on('load resize',function(){
+$(document).on('ready resize',function(){
     $('.online').height($(window).innerHeight()-$('.login-info').outerHeight());
 })
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
     }
     if (name != null && $.trim(name) != '') {
         var socket = io();
-        $('.login-info').text("Logged in as "+name);
+        $('#userid').text("Logged in as "+name);
         socket.on('userList', function(data) {
             userList = data.list;
             var list = "";
@@ -254,6 +254,10 @@ $(document).ready(function() {
             $('.chat-box ul').height($('.chat-box').height() - $('.title').height() - $('.send-message').height());
         });
 
+        $('#nav-btn').on('click',function(){
+            $('.bar:nth-child(1)').css({'right': '1px','transform':'rotate(45deg)'});
+            $('.bar:nth-child(3)').css({'top':'11px','right': '2px','transform':'rotate(-45deg)'});
+        });
 
 
     } else {
