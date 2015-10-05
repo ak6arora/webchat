@@ -3,14 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 input:focus {
     outline: none;
 }
+
 body {
     font-family: arial;
     font-size: 1em;
     min-height: 100vh;
 }
+
 .login-info {
     width: 100%;
     background-color: #2F54FF;
@@ -19,14 +22,17 @@ body {
     font-weight: bold;
     overflow: hidden;
 }
-span#userid{
+
+span#userid {
     float: left;
 }
-span#nav-btn{
+
+span#nav-btn {
     float: right;
     position: relative;
     cursor: pointer;
 }
+
 .bar {
     position: absolute;
     right: 3px;
@@ -34,15 +40,19 @@ span#nav-btn{
     -webkit-transition: .5s all;
     transition: .5s all;
 }
+
 .bar:nth-child(1) {
     top: -6px;
 }
+
 .bar:nth-child(2) {
     top: 0;
 }
+
 .bar:nth-child(3) {
     top: 6px;
 }
+
 .notification-icon {
     position: absolute;
     top: -7px;
@@ -56,11 +66,13 @@ span#nav-btn{
     color: #fff;
     background-color: #FF8F35;
 }
+
 .notification-icon:empty {
     width: 0;
     height: 0;
-    border:none;
+    border: none;
 }
+
 .online {
     width: 250px;
     position: fixed;
@@ -69,22 +81,28 @@ span#nav-btn{
     -moz-transition: .5s all;
     -webkit-transition: .5s all;
     transition: .5s all;
+    z-index: 1;
+    background-color: #fff;
 }
+
 .online ul {
     list-style: none;
     margin: 0;
     overflow-y: auto;
     height: 100%;
 }
+
 .online ul li {
     padding: 17px 10px;
     border-bottom: 1px solid #EEEEEE;
     color: #12BFFF;
     cursor: pointer;
 }
+
 .online ul li:hover {
     background: #f1f1f1;
 }
+
 .online .icon-online {
     background: #44B449;
     display: inline-block;
@@ -93,17 +111,20 @@ span#nav-btn{
     vertical-align: middle;
     margin-right: 5px;
 }
+
 .chat-box {
     width: 400px;
     float: right;
     position: fixed;
     box-shadow: -3px 0px 14px 1px #ccc;
 }
+
 .send-message {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
+
 input#msg-box {
     width: 368px;
     height: 30px;
@@ -114,6 +135,7 @@ input#msg-box {
     vertical-align: bottom;
     padding: 0 10px;
 }
+
 .send-image {
     width: 30px;
     height: 30px;
@@ -123,6 +145,7 @@ input#msg-box {
     float: right;
     overflow: hidden;
 }
+
 #image {
     display: block !important;
     width: 30px !important;
@@ -130,18 +153,22 @@ input#msg-box {
     opacity: 0 !important;
     overflow: hidden !important;
 }
+
 .chat-box ul {
     overflow-y: auto;
     list-style: none;
     clear: both;
     background: #eee;
 }
+
 .chat-box ul li {
     margin: 15px 0;
 }
+
 .chat-box .sent {
     text-align: right;
 }
+
 .bubble {
     position: relative;
     margin: 0 15px;
@@ -158,9 +185,11 @@ input#msg-box {
     -moz-box-shadow: 1px 1px 7px 0px rgba(97, 97, 97, 0.56);
     box-shadow: 1px 1px 7px 0px rgba(97, 97, 97, 0.56);
 }
+
 .sent .bubble {
     background: #E8FFFF;
 }
+
 .recieved .bubble:after {
     content: "";
     position: absolute;
@@ -173,9 +202,11 @@ input#msg-box {
     width: 0;
     z-index: 1;
 }
+
 .img-msg {
     width: 100%;
 }
+
 .sent .bubble:after {
     content: "";
     position: absolute;
@@ -188,6 +219,7 @@ input#msg-box {
     width: 0;
     z-index: 1;
 }
+
 .notification {
     display: inline-block;
     float: right;
@@ -198,14 +230,17 @@ input#msg-box {
     font-weight: bold;
     color: #fff;
 }
+
 .notification:empty {
     padding: 0;
 }
+
 .chat-head {
     float: left;
     box-shadow: 0 2px 10px 0px #ccc;
     width: 100%;
 }
+
 h1.title {
     float: left;
     max-width: 250px;
@@ -214,14 +249,29 @@ h1.title {
     padding: 0 10px;
     color: #2F54FF;
 }
+
 span#offline {
     float: left;
     padding: 9px 0px;
 }
+
 span#close-chat {
     float: right;
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
     padding: 7px;
+}
+
+
+/*responsive styles*/
+
+@media screen and (max-width: 768px) {
+    .online {
+        width: 100%;
+        right: -101%;
+    }
+    .chat-box {
+        width: 100%;
+    }
 }

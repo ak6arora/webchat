@@ -125,6 +125,7 @@ $(document).ready(function() {
             $('#close-chat').click(function() {
                 $('.chat-box').remove();
             });
+            $('#nav-btn').trigger('click');
             $('#image').on('change', function() {
                 var valid = true;
                 var file = $('#image')[0].files[0];
@@ -272,6 +273,12 @@ $(document).ready(function() {
         $(window).resize(function() {
             $('.chat-box').height($(window).innerHeight() - $('.login-info').outerHeight());
             $('.chat-box ul').height($('.chat-box').height() - $('.title').height() - $('.send-message').height());
+            if($(this).innerWidth()>768 && $('#nav-btn').data('toggle') == "open"){
+                $('.online').css('right', '-260px');
+            }
+            else if($(this).innerWidth()<=768 && $('#nav-btn').data('toggle') == "open"){
+                $('.online').css('right', '-101%');
+            }
         });
 
         $('#nav-btn').on('click', function() {
@@ -292,11 +299,13 @@ $(document).ready(function() {
                 $(this).data('toggle', 'close');
             } else {
                 $('.bar').attr('style', '');
-                $('.online').css('right', '-260px');
+                if ($(window).innerWidth() > 768)
+                    $('.online').css('right', '-260px');
+                else
+                    $('.online').css('right', '-101%');
                 $(this).data('toggle', 'open');
             }
         });
-
 
     } else {
         $('body').html('You must enter a userid to continue.Please reload page.');
