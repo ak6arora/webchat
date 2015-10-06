@@ -68,12 +68,9 @@ $(document).ready(function() {
                     break;
                 }
             }
-            var total = 0;
-            for (var n = 0; n < notification.length; n++) {
-                total += notification[n].count;
-            }
-            if (total)
-                $('.notification-icon').text(total);
+            
+            if (notification.length)
+                $('.notification-icon').text(notification.length);
             else
                 $('.notification-icon').text('');
             $('.chat-box').remove();
@@ -234,12 +231,9 @@ $(document).ready(function() {
                 });
 
             }
-            var total = 0;
-            for (var n = 0; n < notification.length; n++) {
-                total += notification[n].count;
-            }
-            if (total)
-                $('.notification-icon').text(total);
+        
+            if (notification.length)
+                $('.notification-icon').text(notification.length);
             else
                 $('.notification-icon').text('');
 

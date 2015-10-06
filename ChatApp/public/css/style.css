@@ -126,7 +126,7 @@ span#nav-btn {
 }
 
 input#msg-box {
-    width: 368px;
+    width: 370px;
     height: 30px;
     font-size: 20px;
     border: 1px solid #bbb;
@@ -273,5 +273,11 @@ span#close-chat {
     }
     .chat-box {
         width: 100%;
+    }
+    input#msg-box {
+        width: 95%;
+    }
+    .send-image {
+        width: 5%;
     }
 }
