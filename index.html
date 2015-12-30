@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat App</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+</head>
+
+<body>
+    <div id="container">
+        <div class="call-container" id="videos">
+            <video id="callerAudio"></video>
+            <button id="hangup" style="display: none">End Call</button>
+            <button id="enableCam">Enable</button>
+            <button id="disableCam">Disable</button>
+            <div id="acceptCallBox">
+                <div id="acceptCallLabel"></div>
+                <button id="callAcceptButton">Accept</button>
+                <button id="callRejectButton">Reject</button>
+            </div>
+        </div>
+    </div>
+    <div class="login-info">
+        <span id="userid">Welcome</span>
+        <span id="nav-btn" data-toggle="open">
+            <span class="bar">&#8212;</span>
+        <span class="bar">&#8212;</span>
+        <span class="bar">&#8212;</span>
+        <span class="notification-icon"></span>
+        </span>
+    </div>
+    <div class="online">
+        <ul id="users-list"></ul>
+    </div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/easyrtc.js"></script>
+    <script type="text/javascript" src="/js/handlebars-v2.0.0.js"></script>
+    <script id="chat-tab" type="text/x-handlebars-template">
+        <div class="chat-box">
+            <div class="chat-head">
+                <h1 class="title">{{name}}</h1><span id="offline">(Offline)</span>
+                <button id="callButton">call</button>
+                <span id="close-chat">X</span>
+            </div>
+            <ul>
+                {{#each chatHistory}}
+                <li class={{type}}>
+                    <div class="bubble">
+                        {{#if msg}} {{msg}} {{else}}
+                        <img src={{img}} class="img-msg" /> {{/if}}
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+            <form class="send-message">
+                <input type='text' id='msg-box' />
+                <div class="send-image">
+                    <input type="file" id="image" />
+                </div>
+            </form>
+        </div>
+    </script>
+    <script type="text/javascript" src="/js/client.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+    });
+    </script>
+</body>
+
+</html>
